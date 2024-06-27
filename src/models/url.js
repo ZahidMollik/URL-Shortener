@@ -12,7 +12,7 @@ const urlSchema=new mongoose.Schema({
     require:true,
   },
   visitHistory:[{timestamp:{type:Number}}]
-},{timestamp:true});
+},{timestamps:true});
 
 const URL=new mongoose.model('url',urlSchema);
 

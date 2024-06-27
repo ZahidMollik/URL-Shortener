@@ -8,7 +8,7 @@ app.use(express.urlencoded({extended:false}));
 db.connectMongoDB(envVariable.MONGODB_URL).then(()=>{
   console.log('mongoDB connected');
 })
-app.use('/api',apiRoutes);
+app.use('/',apiRoutes);
 
 app.listen(envVariable.PORT,()=>{
   console.log('server running on PORT',envVariable.PORT);
