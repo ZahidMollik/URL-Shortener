@@ -41,7 +41,16 @@ async function redirectURL(req,res){
         }
       }
   )
-  res.redirect(response.redirectURL);
+  let redirectURL=response.redirectURL;
+  if(redirectURL.startsWith('https://')){
+    res.redirect(redirectURL);
+  }
+  else{
+    let str='https://'+redirectURL;
+    res.redirect(str);
+  }
+
+  
   } catch (error) {
     console.log(error);
   }
